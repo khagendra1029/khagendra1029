@@ -1,0 +1,47 @@
+package fileReader;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TxtFileReader {
+
+    public String readFromTxtFile() throws IOException {
+
+        String filePath = "CustomerInformation.txt";
+
+
+        ClassLoader loader = getClass().getClassLoader();
+        File file = new File(loader.getResource(filePath).getFile());
+        ArrayList<String>list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+
+        InputStream in = new FileInputStream(file);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String line;
+        while ((line = br.readLine()) != null) {
+            list.add(line);
+
+             //sb.append(line + System.lineSeparator());
+        }
+        br.close();
+        in.close();
+       for(int i = 0; i<list.size()-1; i++){
+           sb.append(list.get(i+1)+"\n");
+       }
+        return sb.toString();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
