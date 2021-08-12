@@ -16,7 +16,7 @@ public class TxtFileReader {
         ClassLoader loader = getClass().getClassLoader();
         File file = new File(loader.getResource(filePath).getFile());
         ArrayList<String>list = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
 
         InputStream in = new FileInputStream(file);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -29,9 +29,9 @@ public class TxtFileReader {
         br.close();
         in.close();
        for(int i = 0; i<list.size()-1; i++){
-           sb.append(list.get(i+1)+"\n");
+           builder.append(list.get(i+1)+"\n");
        }
-        return sb.toString();
+        return builder.toString();
     }
 }
 
