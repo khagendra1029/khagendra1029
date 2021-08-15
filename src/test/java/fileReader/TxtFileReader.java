@@ -19,19 +19,19 @@ public class TxtFileReader {
         StringBuilder builder = new StringBuilder();
 
         InputStream in = new FileInputStream(file);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(in));
         String line;
-        while ((line = br.readLine()) != null) {
+        while ((line = bReader.readLine()) != null) {
             list.add(line);
 
              //sb.append(line + System.lineSeparator());
         }
-        br.close();
+        bReader.close();
         in.close();
        for(int i = 0; i<list.size()-1; i++){
            builder.append(list.get(i+1)+"\n");
        }
-        return builder.toString();
+       return builder.toString();
     }
 }
 

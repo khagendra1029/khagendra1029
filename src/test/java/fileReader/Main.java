@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
-    public static void main(String args []) throws URISyntaxException, IOException {
+    public static void main(String args []) throws IOException {
         System.out.println(new TxtFileReader().readFromTxtFile());
 
 
